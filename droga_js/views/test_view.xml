@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- tree view -->
+    <record id="test_tree_view" model="ir.ui.view">
+        <field name="name">test_tree_view</field>
+        <field name="model">hm.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="birthdate"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view -->
+    <record id="test_form_view" model="ir.ui.view">
+        <field name="name">test_form_view</field>
+        <field name="model">hm.patient</field>
+        <field name="arch" type="xml">
+            <form js_class="js_form_view">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="birthdate"/>
+                        </group>
+                    </group>
+                </sheet>
+
+            </form>
+        </field>
+
+    </record>
+
+    <!-- action -->
+    <record id="test_action" model="ir.actions.act_window">
+        <field name="name">Test Form</field>
+        <field name="res_model">hm.patient</field>
+    </record>
+
+    <menuitem id="test_action_menu" name="Test View" sequence="1"
+              parent="account_accountant.menu_accounting" action="test_action">
+    </menuitem>
+
+
+</odoo>
